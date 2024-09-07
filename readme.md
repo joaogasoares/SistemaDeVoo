@@ -1,7 +1,6 @@
-
 # Sistema de Gestão de Planos de Voo
 
-Este projeto é um sistema de gestão de planos de voo desenvolvido em JavaScript. Ele inclui testes automatizados para garantir a funcionalidade do sistema.
+Este projeto é um sistema de gestão de planos de voo desenvolvido em JavaScript. Ele inclui testes automatizados com Jest e utiliza Babel para a transpilação do código.
 
 ## Requisitos
 
@@ -48,13 +47,33 @@ Este projeto é um sistema de gestão de planos de voo desenvolvido em JavaScrip
 
 ## Preparação do Ambiente
 
-1. **Clonar o Repositório ou Copiar os Arquivos:**
-   - Garanta que os arquivos do projeto estão na pasta do sistema.
-
-2. **Instalar Dependências:**
+1. **Instalar Dependências:**
    - No terminal ou prompt de comando, navegue até a pasta do projeto e execute:
      ```bash
      npm install
+     ```
+
+2. **Instalar Jest e Babel:**
+   - Instale as dependências necessárias para Jest e Babel:
+     ```bash
+     npm install --save-dev jest @babel/preset-env
+     ```
+
+3. **Modificar o `package.json`:**
+   - Adicione as seguintes linhas ao seu `package.json` para configurar o Jest:
+     ```json
+     "type": "module",
+     "scripts": {
+       "test": "jest"
+     }
+     ```
+
+4. **Criar o arquivo `.babelrc`:**
+   - Na raiz do projeto, crie um arquivo `.babelrc` com o seguinte conteúdo:
+     ```json
+     {
+       "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+     }
      ```
 
 ## Executando o Sistema
@@ -73,8 +92,6 @@ Este projeto é um sistema de gestão de planos de voo desenvolvido em JavaScrip
 
 ## Rodando os Testes
 
-Este projeto inclui testes automatizados para garantir que todos os componentes funcionem corretamente.
-
 1. **Executar os Testes:**
    - Use o seguinte comando para rodar os testes:
      ```bash
@@ -90,3 +107,4 @@ Este projeto inclui testes automatizados para garantir que todos os componentes 
 - `sistema.test.js`: Contém os testes unitários.
 - `node_modules/`: Diretório de dependências.
 - `package.json`: Contém as informações e dependências do projeto.
+- `.babelrc`: Arquivo de configuração do Babel.
